@@ -1,19 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,400;1,300;1,400&family=Mukta:wght@200&family=Oleo+Script+Swash+Caps&family=Source+Serif+4:opsz@8..60&family=Syne+Mono&display=swap');
 
 body {
-    background-color: honeydew;
-    color: maroon;
+    
+    color: brown;
     font-family: Aleo, sans-serif;
     font-size: 18px;
+    line-height: 30px;
+}
+
+.img-background {
+    background-image: url(../images/programming_img.jpg);
+    position:static;
+    margin-left: 120px;
+    background-repeat: no-repeat;
+}
+
+.img-background::before {
+    background-color: honeydew;
+    display: block;
+    height: 100%;
+    width: 100%;
+    position:absolute;
 }
 
 h1 {
     text-align:center; 
-    padding: 2px; 
+    padding: 20px; 
     background-color: DarkSalmon;
+    font-style: italic;
     font-size: 50px;
     font-weight:600;
     color:maroon;
+    height: 30px;
 }
 
 h2 {
@@ -55,17 +73,16 @@ input {
 textarea {
     font-size: 14px;
     width: 25%;
-    height: 120px;
+    height: 80px;
     padding: 10px 20px;
     border: 2px groove #B22222;
 }
 
 img {
+    width: 132px;
+    height: 182px;
+    border: 3px groove #B22222;
     float: right;
-    width: 280px;
-    height: 400px;
-    border-style: groove;
-    border-color: #B22222;
 }
 
 section {
@@ -116,10 +133,34 @@ button:hover {
     text-decoration: underline;
 }
 
+.box-about-me {
+    width: 900px;
+    padding-top: 20px;
+}
+
+.connect-box {
+    width: 400px;
+    height: 200px;
+    float: right;
+    padding: 20px;
+    margin-top: 20px;
+    margin-right: 105px;
+    border-style: double;
+    border-width: 5px;
+}
+
+.connect-box li:hover {
+    background-color: brown;
+}
+
+.leave-message-box {
+    margin-left: 80px;
+}
+
 footer {
     text-align:center;
-    padding: 2px;
     background-color: DarkSalmon;
+    height: 25px;
 }
 
 @media only screen and (max-width: 768px) {
