@@ -38,7 +38,44 @@ messageForm[0].addEventListener('submit', (event) => {
     const messageSection = document.getElementById('messages');
     const messageList = messageSection.querySelector('ul');
     const newMessage = document.createElement('li');
+
+    const span = document.createElement('span'); 
+    newMessage.appendChild(span);
+
     newMessage.innerHTML = `<a href="mailto:${email}">${name}</a> wrote: <span>${message}</span>  `;
+    
+    //edit button
+    const editButton = document.createElement('button');
+    editButton.innerText = 'edit';
+    editButton.type = "button";
+
+    messageList.addEventListener('click', (e) => {
+        if (e.target.tagName === 'BUTTON') {
+            const button = e.target;
+            const li = button.parentNode;
+            const ul = li.parentNode;
+            if (button.textContent === 'remove') {
+                ul.removeChild(newMessage);
+            } else if (button.textContent === 'edit') {
+                const span = newMessage.firstElementChild;
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.value = span.textContent;
+                newMessage.insertBefore(input, span);
+                newMessage.removeChild(span);
+                button.textContent = 'save';
+            } else if (button.textContent === 'save') {
+                const input = newMessage.firstElementChild;
+                const span = document.createElement('span');
+                span.textContent = input.value;
+                newMessage.insertBefore(span, input);
+                newMessage.removeChild(input);
+                button.textContent = 'edit';
+            }
+        }
+    }); 
+    newMessage.appendChild(editButton);
+    
     const removeButton = document.createElement('button');
     removeButton.innerText = 'remove';
     removeButton.type = "button";
@@ -48,7 +85,13 @@ messageForm[0].addEventListener('submit', (event) => {
         });
     newMessage.appendChild(removeButton);
     messageList.appendChild(newMessage);
+    // 'Messages' appear only when there is a message (1st variant):
+    const title_messages = document.getElementById('title_h2');
+    if (newMessage.innerText.length > 1) {
+        title_messages.innerText = 'Messages';
+    }
+    // 'Messages' appear only when there is a message (2nd variant):
+    // const titleMessages = messageSection.querySelector('h2');
+    // titleMessages.innerHTML = "Messages";
     messageForm.item(0).reset();
 });
-
-
