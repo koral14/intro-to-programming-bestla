@@ -57,7 +57,7 @@ messageForm[0].addEventListener('submit', (event) => {
             if (button.textContent === 'remove') {
                 ul.removeChild(newMessage);
             } else if (button.textContent === 'edit') {
-                const span = newMessage.firstElementChild;
+                const span = newMessage.childNodes[2];
                 const input = document.createElement('input');
                 input.type = 'text';
                 input.value = span.textContent;
@@ -65,7 +65,7 @@ messageForm[0].addEventListener('submit', (event) => {
                 newMessage.removeChild(span);
                 button.textContent = 'save';
             } else if (button.textContent === 'save') {
-                const input = newMessage.firstElementChild;
+                const input = newMessage.childNodes[2];
                 const span = document.createElement('span');
                 span.textContent = input.value;
                 newMessage.insertBefore(span, input);
