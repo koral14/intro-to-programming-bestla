@@ -6,63 +6,71 @@
         <meta name="description" content="Personal information">
         <meta name="keywords" content="Musteata, Experience">
         <meta name="author" content="Olga Musteata">
-        <link rel="stylesheet" href="css/index.css">
+        <style>
+            .column {
+                flex: 50%;
+                padding: 5px;
+                float: right;
+            }
+
+        </style>
     </head>
-    <body>
+    <body style="background-color:beige">
         <header>
-            <h1>Olga Musteata</h1>
+            <h1 style="text-align:center; padding: 2px; background-color: DarkSalmon;">Olga Musteta</h1>
         </header>
-        <div class="img-background">
-            <section class="box-about-me">
-                <h2>Something about me...</h2>
-                <p> &nbsp; &nbsp; I am a Moldovan who moved to the US with my family four years ago after winning the Green Card lottery. <br>
-                    &nbsp; &nbsp; Because I was raised in a post-Soviet country, I speak both Romanian and Russian fluently. I also speak English with ease and have good understanding of Spanish, Italian, and Portuguese. During my time in high school and college, I also learned German and French, but I never had the chance to put those skills to use. <br>
-                    &nbsp; &nbsp; I hold a computer science bachelor's degree from my native country as well as a database management certificate from California. The only thing I don't have yet is experience in programming. <br>
-                    &nbsp; &nbsp; In terms of my personal life, I am a happy wife and a mother of two children.</p>
-            </section>
-            <section id="experience">
-                <h2>Experience</h2>
-                <ul>
-                    <li>Dreamcraft LTD</li>
-                    <li>Omniscriptum</li>
-                    <li>Morebooks</li>
-                </ul>
-            </section>
-            <section id="skills">
-                <h2>Skills</h2>
-                <ul></ul>
-            </section>
+        <div class="column">
+            <img src="images/programming_img.jpg" alt="Programming image">
         </div>
-        <section class="connect-box">
+        <section>
+            <h2>Something about me...</h2>
+            <p> I am a Moldovan who moved to the US with my family four years ago after winning the Green Card lottery. <br>
+                &nbsp; &nbsp; Because I was raised in a post-Soviet country, I speak both Romanian and Russian fluently. I also speak English with ease and have good understanding of Spanish, Italian, and Portuguese. During my time in high school and college, I also learned German and French, but I never had the chance to put those skills to use. <br>
+                &nbsp; &nbsp; I hold a computer science bachelor's degree from my native country as well as a database management certificate from California. The only thing I don't have yet is experience in programming. <br>
+                &nbsp; &nbsp; In terms of my personal life, I am a happy wife and a mother of two children.</p>
+        </section>
+        <section>
+            <h2>Experience</h2>
+            <ul>
+                <li>Dreamcraft LTD</li>
+                <li>Omniscriptum</li>
+                <li>Morebooks</li>
+            </ul>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul></ul>
+        </section>
+        <section>
             <h2>Connect</h2>
             <ol>
                 <li><a href="mailto:musteataolga8@gmail.com">Email</a></li>
                 <li><a href="https://github.com/koral14/intro-to-programming-bestla?organization=koral14&organization=koral14">GitHub account</a></li>
                 <li><a href="https://linkedin.com/in/olga-musteata-293b10214">Linkedin profile</a></li>
             </ol>
-            <img src="images/profile.jpg" alt="My profile picture">
         </section>
-        <div class="leave-message-box">
-            <section>
-                <h2>Leave a Message</h2>
-                <form action="index.html" method="post" name="leave_message">
-                    <label for="name">Name</label><br>
-                    <input type="text" id="name" name="name" required="true"><br>
+        <section>
+            <h2>Leave a Message</h2>
+            <form action="index.html" method="post" name="leave_message">
+                <label for="name">Name</label><br>
+                <input type="text" id="name" name="name" required="true"><br>
 
-                    <label for="email">Email Address</label><br>
-                    <input type="email" id="email" name="email" required="true"><br>
+                <label for="email">Email Address</label><br>
+                <input type="email" id="email" name="email" required="true"><br>
 
-                    <label for="message">Message</label><br>
-                    <textarea id="message" name="message" required="true"></textarea><br>
-                    <button type="submit">Submit</button>
-                </form>
-            </section>
-            <section id="messages">
-                <h2 id="title_h2"></h2>
-                <ul></ul>
-            </section>
-        </div>
-        <footer></footer>
+                <label for="message">Message</label><br>
+                <textarea id="message" name="message" required="true"></textarea><br>
+
+                <button type="submit">Submit</button>
+
+            </form>
+        </section>
+        <section id="messages">
+            <h2>Messages</h2>
+            <ul></ul>
+        </section>
+        <img src="images/profile.jpg" alt="My profile picture" style="float:right;width:38px;height:55px;">
+        <footer style="text-align:center; padding: 2px; background-color: DarkSalmon;"></footer>
         <script src="js/index.js"></script>
     </body>
 </html>
