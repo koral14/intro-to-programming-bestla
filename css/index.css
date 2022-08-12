@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,400;1,300;1,400&family=Mukta:wght@200&family=Oleo+Script+Swash+Caps&family=Source+Serif+4:opsz@8..60&family=Syne+Mono&display=swap');
+
+body {
+    color: brown;
+    font-family: Aleo, sans-serif;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.img-background {
+    background-image: url(../images/programming_img.jpg);
+    position: static;
+    margin-left: 120px;
+    background-repeat: no-repeat;
+}
+
+.img-background::before {
+    background-color: honeydew;
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+h1 {
+    text-align: center; 
+    padding: 20px; 
+    background-color: DarkSalmon;
+    font-style: italic;
+    font-size: 50px;
+    font-weight: 600;
+    color: maroon;
+    height: 30px;
+    background-image: url(../images/moldova-flag.jpg);
+    background-repeat: no-repeat;
+}
+
+h2 {
+    font-size: 35px;
+    font-weight: 300;
+    color: brown;
+}
+
+#experience ul li {
+    list-style-type: none;
+    padding-left: 20px;
+    background-image: url(../images/block.jpg);
+    background-position: 0 0;
+    background-size: 10px 10px;
+    background-repeat: no-repeat;
+}
+
+#skills li {
+    list-style-type: none;
+    padding-left: 20px;
+    background-image: url(../images/star.jpg);
+    background-position: 0 0;
+    background-size: 10px 10px;
+    background-repeat: no-repeat;
+}
+
+label {
+    color: #B22222;
+    font-size: 18px;
+}
+
+input {
+    font-size: 14px;
+    padding: 5px;
+    border: 2px groove #B22222;
+    margin-bottom: 15px;
+}
+
+textarea {
+    font-size: 14px;
+    width: 25%;
+    height: 80px;
+    padding: 10px 20px;
+    border: 2px groove #B22222;
+}
+
+a:link {
+    color: brown;
+}
+
+a:hover {
+    color: aliceblue;
+}
+
+a:visited {
+    color: chocolate;
+}
+
+img {
+    width: 132px;
+    height: 182px;
+    border: 3px groove #B22222;
+    float: right;
+}
+
+section {
+    margin-left: 40px;
+    padding-bottom: 10px;
+}
+
+button {
+    background-color: lightsteelblue;
+    border: none;
+    border-radius: 16px;
+    color: gray;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: brown;
+    color: white;
+}
+
+#messages li {
+    list-style-type: none;
+    padding-left: 20px;
+    background-image: url(../images/tick.jpg);
+    background-position: 0 0;
+    background-size: 10px 10px;
+    background-repeat: no-repeat;
+}
+
+#messages button {
+    background-color: cadetblue;
+    border: none;
+    border-radius: 8px;
+    color: black;
+    padding: 5px 15px;
+    display: inline-block;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    margin-left: 5px;
+}
+
+#messages button:hover {
+    background-color: brown;
+    color: white;
+    text-decoration: underline;
+}
+
+#messages a:hover {
+    color: blue;
+}
+
+.box-about-me {
+    width: 900px;
+    padding-top: 20px;
+}
+
+.connect-box {
+    width: 300px;
+    height: 200px;
+    float: right;
+    padding: 20px;
+    margin-top: 20px;
+    margin-right: 205px;
+    border-style: double;
+    border-width: 5px;
+}
+
+.connect-box li:hover {
+    background-color: brown;
+}
+
+.leave-message-box {
+    margin-left: 80px;
+}
+
+footer {
+    text-align: center;
+    background-color: DarkSalmon;
+    height: 25px;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+      width: 100%;
+      background-color: bisque;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: justify;
+    }
+
+    h1 {
+       font-size: 30px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    label {
+        font-size: 16px;
+    }
+    
+    input {
+        font-size: 14px;
+        padding: 5px;
+        border: 2px groove #B22222;
+        margin-bottom: 10px;
+    }
+
+    textarea {
+        font-size: 12px;
+        width: 50%;
+        height: 70px;
+    }
+
+    section {
+        margin-left: 5px;
+        padding-bottom: 5px;
+    }
+
+    .box-about-me {
+        width: 90%;
+        padding-top: 20px;
+        padding-left: 10px;
+    }
+
+    .img-background {
+        margin-left: 10px;
+        width: 95%;
+    }
+    
+    .connect-box {
+        width: 200px;
+        height: 200px;
+        padding: 10px;
+        border-style: double;
+        border-width: 5px;
+        margin-bottom: 120px;
+    }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width:1024px) {
+    body {
+        width: 100%;
+        background-color: aliceblue;
+        font-size: 16px;
+        line-height: 25px;
+        text-align: justify;
+      }
+
+      .img-background {
+        margin-left: 20px;
+    }
+  
+    textarea {
+        font-size: 12px;
+        width: 50%;
+    }
+
+    section {
+        margin-left: 10px;
+        padding-bottom: 5px;
+    }
+
+    .box-about-me {
+        width: 90%;
+        padding-top: 20px;
+        padding-left: 10px;
+    }
+
+    .connect-box {
+        width: 200px;
+        height: 180px;
+        float: right;
+        padding: 20px;
+        margin-top: 10px;
+        margin-right: 20px;
+        border-style: double;
+        border-width: 5px;
+    }
+}
