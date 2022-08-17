@@ -1,15 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,400;1,300;1,400&family=Mukta:wght@200&family=Oleo+Script+Swash+Caps&family=Source+Serif+4:opsz@8..60&family=Syne+Mono&display=swap');
 
 body {
-    color: brown;
     font-family: Aleo, sans-serif;
     font-size: 18px;
     line-height: 30px;
+    position: relative;
+}
+
+header {
+    background-color:blanchedalmond;
+    padding: 10px 15px;
+    height: 110px;
+    position: fixed;
+    width: 100vw;
+    top: 0px;
+}
+
+h1 {
+    text-align: center; 
+    padding: 20px; 
+    background-color: DarkSalmon;
+    font-style: italic;
+    font-size: 50px;
+    font-weight: 600;
+    color: maroon;
+    height: 20px;
+    margin-top: auto;
+    background-image: url(../images/moldova-flag.jpg);
+    background-repeat: no-repeat;
+}
+
+h2 {
+    font-size: 35px;
+    font-weight: 300;
+    color: brown;
 }
 
 .img-background {
     background-image: url(../images/programming_img.jpg);
-    position: static;
     margin-left: 120px;
     background-repeat: no-repeat;
 }
@@ -22,26 +50,43 @@ body {
     position: absolute;
 }
 
-h1 {
-    text-align: center; 
-    padding: 20px; 
-    background-color: DarkSalmon;
-    font-style: italic;
-    font-size: 50px;
-    font-weight: 600;
-    color: maroon;
-    height: 30px;
-    background-image: url(../images/moldova-flag.jpg);
-    background-repeat: no-repeat;
+.main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-h2 {
-    font-size: 35px;
-    font-weight: 300;
-    color: brown;
+.main-nav li {
+    background-color:darkred;
+    text-align: center;
+    padding: 5px 10px;
+    font-size: 17px;
+    margin-top: -20px;
+    justify-content: space-between;
+    width: 110px;
 }
 
-#experience ul li {
+.main-nav a {
+    color: wheat;
+}
+
+.main-nav li:hover {
+    background-color: brown;
+}
+
+header ul li {
+    display: inline-block;
+    margin: 0 0.45em;
+}
+
+.container-expirience {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.container-expirience li {
     list-style-type: none;
     padding-left: 20px;
     background-image: url(../images/block.jpg);
@@ -79,15 +124,19 @@ textarea {
     border: 2px groove #B22222;
 }
 
-a:link {
+#connect a:link {
     color: brown;
 }
 
-a:hover {
+#connect a:hover {
     color: aliceblue;
 }
 
-a:visited {
+#connect a:visited {
+    color: antiquewhite;
+}
+
+#connect a:visited {
     color: chocolate;
 }
 
@@ -151,28 +200,38 @@ button:hover {
     color: blue;
 }
 
-.box-about-me {
+#personal {
+    margin-top: 10rem;
     width: 900px;
     padding-top: 20px;
 }
 
-.connect-box {
-    width: 300px;
-    height: 200px;
+#connect {
+    background-color: blanchedalmond;
+    width: 340px;
+    height: 270px;
     float: right;
     padding: 20px;
-    margin-top: 20px;
-    margin-right: 205px;
+    margin-top: 30px;
+    margin-right: 150px;
     border-style: double;
     border-width: 5px;
 }
 
-.connect-box li:hover {
+#connect li:hover {
     background-color: brown;
+    width: 145px;
 }
 
 .leave-message-box {
     margin-left: 80px;
+}
+
+#flex-message {
+    display: flex;
+    max-width: 500px;
+    grid-template-columns: 200px auto 200px;
+    background-color: blueviolet;
 }
 
 footer {
@@ -183,15 +242,22 @@ footer {
 
 @media only screen and (max-width: 768px) {
     body {
-      width: 100%;
-      background-color: bisque;
-      font-size: 14px;
-      line-height: 20px;
-      text-align: justify;
+        width: 100%;
+        background-color: bisque;
+        font-size: 14px;
+        line-height: 20px;
+        text-align: justify;
+    }
+
+    .main-nav li {
+        padding: 2px 2px;
+        font-size: 10px;
+        margin-top: -20px;
+        width: 70px;
     }
 
     h1 {
-       font-size: 30px;
+        font-size: 28px;
     }
 
     h2 {
@@ -220,7 +286,7 @@ footer {
         padding-bottom: 5px;
     }
 
-    .box-about-me {
+    #personal {
         width: 90%;
         padding-top: 20px;
         padding-left: 10px;
@@ -231,13 +297,21 @@ footer {
         width: 95%;
     }
     
-    .connect-box {
-        width: 200px;
-        height: 200px;
-        padding: 10px;
+    #connect {
+        width: 240px;
+        height: 160px;
         border-style: double;
         border-width: 5px;
-        margin-bottom: 120px;
+        margin-bottom: 25px;
+    }
+
+    #connect li {
+        font-size: 14px;
+    }
+
+    img {
+        width: 70px;
+        height: 90px;
     }
 
 }
@@ -249,9 +323,9 @@ footer {
         font-size: 16px;
         line-height: 25px;
         text-align: justify;
-      }
+    }
 
-      .img-background {
+    .img-background {
         margin-left: 20px;
     }
   
@@ -265,14 +339,14 @@ footer {
         padding-bottom: 5px;
     }
 
-    .box-about-me {
+    #personal {
         width: 90%;
         padding-top: 20px;
         padding-left: 10px;
     }
 
-    .connect-box {
-        width: 200px;
+    #connect {
+        width: 220px;
         height: 180px;
         float: right;
         padding: 20px;
@@ -280,5 +354,15 @@ footer {
         margin-right: 20px;
         border-style: double;
         border-width: 5px;
+    }
+
+    #connect li {
+        font-size: 14px;
+        width: 100px;
+    }
+
+    img {
+        width: 70px;
+        height: 90px;
     }
 }

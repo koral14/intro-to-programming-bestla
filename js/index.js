@@ -11,7 +11,7 @@ copyright.innerHTML = `Olga Musteata, ${thisYear}`;
 // Using "DOM Manipulation", append the copyright element to the footer (hint: appendChild method)
 footer.appendChild(copyright);
 // Add Skills Section. List your technical skills by creating an Array of String values and store it in a variable named skills
-const skills = ["blind typing 50WPM", "completed a few projects in Visual Basic and Python", "know how to push/pull a project on GitHub", 
+const skills = ["typing certificate - 50WPM", "completed a few projects in Visual Basic and Python", "know how to push/pull a project on GitHub", 
 "worked with Access, Oracle and Excel", "edited books for a publishing company"];
 // Using "DOM Selection", select the #skills section by id and store it in a variable named skillsSection (hint: querySelector or getElementById method)
 const skillsSection = document.getElementById("skills");

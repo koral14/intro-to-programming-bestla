@@ -11,9 +11,16 @@
     <body>
         <header>
             <h1>Olga Musteata</h1>
+            <ul class="main-nav">
+                <li><a href="#personal">ABOUT</a></li>
+                <li><a href="#experience">EXPERIENCE</a></li>
+                <li><a href="#skills">SKILLS</a></li>
+                <li><a href="#connect">CONNECT</a></li>
+                <li><a href="#message">MESSAGE ME</a></li>
+            </ul>
         </header>
         <div class="img-background">
-            <section class="box-about-me">
+            <section id="personal">
                 <h2>Something about me...</h2>
                 <p> &nbsp; &nbsp; I am a Moldovan who moved to the US with my family four years ago after winning the Green Card lottery. <br>
                     &nbsp; &nbsp; Because I was raised in a post-Soviet country, I speak both Romanian and Russian fluently. I also speak English with ease and have good understanding of Spanish, Italian, and Portuguese. During my time in high school and college, I also learned German and French, but I never had the chance to put those skills to use. <br>
@@ -22,10 +29,10 @@
             </section>
             <section id="experience">
                 <h2>Experience</h2>
-                <ul>
-                    <li>Dreamcraft LTD</li>
-                    <li>Omniscriptum</li>
-                    <li>Morebooks</li>
+                <ul class="container-expirience">
+                    <li>Morebooks - as part of the Print Management Team</li>
+                    <li>Omniscriptum - as an Acquisition Editor</li>
+                    <li>Dreamcraft LTD - website administrator</li>
                 </ul>
             </section>
             <section id="skills">
@@ -33,27 +40,35 @@
                 <ul></ul>
             </section>
         </div>
-        <section class="connect-box">
+        <section id="connect">
             <h2>Connect</h2>
             <ol>
+                <img src="images/profile.jpg" alt="My profile picture">
                 <li><a href="mailto:musteataolga8@gmail.com">Email</a></li>
                 <li><a href="https://github.com/koral14/intro-to-programming-bestla?organization=koral14&organization=koral14">GitHub account</a></li>
                 <li><a href="https://linkedin.com/in/olga-musteata-293b10214">Linkedin profile</a></li>
             </ol>
-            <img src="images/profile.jpg" alt="My profile picture">
         </section>
         <div class="leave-message-box">
-            <section>
+            <section id="message">
                 <h2>Leave a Message</h2>
                 <form action="index.html" method="post" name="leave_message">
-                    <label for="name">Name</label><br>
-                    <input type="text" id="name" name="name" required="true"><br>
+                    <div class="flex-message">
+                        <div>
+                            <label for="name">Name</label><br>
+                            <input type="text" id="name" name="name" required="true"><br>
+                        </div>
 
-                    <label for="email">Email Address</label><br>
-                    <input type="email" id="email" name="email" required="true"><br>
+                        <div>
+                            <label for="email">Email Address</label><br>
+                            <input type="email" id="email" name="email" required="true"><br>
+                        </div>
 
-                    <label for="message">Message</label><br>
-                    <textarea id="message" name="message" required="true"></textarea><br>
+                        <div>
+                            <label for="message">Message</label><br>
+                            <textarea id="message" name="message" required="true"></textarea><br>
+                        </div>
+                    </div>
                     <button type="submit">Submit</button>
                 </form>
             </section>
