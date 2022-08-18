@@ -47,7 +47,7 @@ messageForm[0].addEventListener('submit', (event) => {
     //edit button
     const editButton = document.createElement('button');
     editButton.innerText = 'edit';
-    editButton.type = "button";
+    editButton.type = 'button';
 
     messageList.addEventListener('click', (e) => {
         if (e.target.tagName === 'BUTTON') {
@@ -75,7 +75,7 @@ messageForm[0].addEventListener('submit', (event) => {
         }
     }); 
     newMessage.appendChild(editButton);
-    
+    // remove button
     const removeButton = document.createElement('button');
     removeButton.innerText = 'remove';
     removeButton.type = "button";

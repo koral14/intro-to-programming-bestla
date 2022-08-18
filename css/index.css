@@ -60,10 +60,11 @@ h2 {
     background-color:darkred;
     text-align: center;
     padding: 5px 10px;
-    font-size: 17px;
+    font-size: 16px;
     margin-top: -20px;
-    justify-content: space-between;
-    width: 110px;
+    width: 105px;
+    display: inline-block;
+    margin: -1.4em 2em;
 }
 
 .main-nav a {
@@ -74,10 +75,7 @@ h2 {
     background-color: brown;
 }
 
-header ul li {
-    display: inline-block;
-    margin: 0 0.45em;
-}
+
 
 .container-expirience {
     display: flex;
@@ -228,10 +226,9 @@ button:hover {
 }
 
 #flex-message {
-    display: flex;
+    display: grid;
     max-width: 500px;
     grid-template-columns: 200px auto 200px;
-    background-color: blueviolet;
 }
 
 footer {
@@ -243,17 +240,29 @@ footer {
 @media only screen and (max-width: 768px) {
     body {
         width: 100%;
-        background-color: bisque;
+        background-color: azure;
         font-size: 14px;
         line-height: 20px;
         text-align: justify;
     }
 
+    .main-nav {
+        max-width: 1200px;
+        display: grid;
+        grid-template-columns: 80px 80px;
+        grid-template-rows: 20px 20px;
+        grid-gap: 5px;
+        margin-top: 25px;
+        margin-left: -90px;
+    }
+
     .main-nav li {
-        padding: 2px 2px;
+        align-items: start;
+        padding: 1px 1px;
         font-size: 10px;
         margin-top: -20px;
-        width: 70px;
+        width: 80px;
+        height: 20px;
     }
 
     h1 {
