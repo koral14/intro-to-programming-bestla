@@ -50,6 +50,7 @@ messageForm[0].addEventListener('submit', (event) => {
     editButton.type = 'button';
 
     messageList.addEventListener('click', (e) => {
+
         if (e.target.tagName === 'BUTTON') {
             const button = e.target;
             const li = button.parentNode;
@@ -85,13 +86,10 @@ messageForm[0].addEventListener('submit', (event) => {
         });
     newMessage.appendChild(removeButton);
     messageList.appendChild(newMessage);
-    // 'Messages' appear only when there is a message (1st variant):
+    // 'Messages' appear only when there is a message:
     const title_messages = document.getElementById('title_h2');
     if (newMessage.innerText.length > 1) {
         title_messages.innerText = 'Messages';
     }
-    // 'Messages' appear only when there is a message (2nd variant):
-    // const titleMessages = messageSection.querySelector('h2');
-    // titleMessages.innerHTML = "Messages";
     messageForm.item(0).reset();
 });
