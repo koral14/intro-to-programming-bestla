@@ -1,27 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,400;1,300;1,400&family=Mukta:wght@200&family=Oleo+Script+Swash+Caps&family=Source+Serif+4:opsz@8..60&family=Syne+Mono&display=swap');
-
 body {
-    color: brown;
     font-family: Aleo, sans-serif;
     font-size: 18px;
     line-height: 30px;
+    position: relative;
+    margin-top: -20px;
 }
-
-.img-background {
-    background-image: url(../images/programming_img.jpg);
-    position: static;
-    margin-left: 120px;
-    background-repeat: no-repeat;
+header {
+    background-color:blanchedalmond;
+    padding: 10px 15px;
+    height: 110px;
+    position: fixed;
+    width: 100vw;
+    top: 20px;
+    margin-top: -30px;
 }
-
-.img-background::before {
-    background-color: honeydew;
-    display: block;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-}
-
 h1 {
     text-align: center; 
     padding: 20px; 
@@ -30,18 +23,56 @@ h1 {
     font-size: 50px;
     font-weight: 600;
     color: maroon;
-    height: 30px;
+    height: 20px;
+    margin-top: auto;
     background-image: url(../images/moldova-flag.jpg);
     background-repeat: no-repeat;
 }
-
 h2 {
     font-size: 35px;
     font-weight: 300;
     color: brown;
 }
-
-#experience ul li {
+.img-background {
+    background-image: url(../images/programming_img.jpg);
+    margin-left: 20px;
+    background-repeat: no-repeat;
+}
+.img-background::before {
+    background-color: honeydew;
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.main-nav li {
+    background-color:darkred;
+    text-align: center;
+    padding: 5px 10px;
+    font-size: 16px;
+    margin-top: -20px;
+    width: 105px;
+    display: inline-block;
+    margin: -1.4em 2em;
+}
+.main-nav a {
+    color: wheat;
+}
+.main-nav li:hover {
+    background-color: brown;
+}
+.container-experience {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: left;
+}
+.container-experience li {
     list-style-type: none;
     padding-left: 20px;
     background-image: url(../images/block.jpg);
@@ -49,7 +80,6 @@ h2 {
     background-size: 10px 10px;
     background-repeat: no-repeat;
 }
-
 #skills li {
     list-style-type: none;
     padding-left: 20px;
@@ -58,51 +88,45 @@ h2 {
     background-size: 10px 10px;
     background-repeat: no-repeat;
 }
-
 label {
     color: #B22222;
     font-size: 18px;
 }
-
 input {
     font-size: 14px;
     padding: 5px;
     border: 2px groove #B22222;
     margin-bottom: 15px;
 }
-
 textarea {
     font-size: 14px;
-    width: 25%;
+    width: 500px;
     height: 80px;
     padding: 10px 20px;
     border: 2px groove #B22222;
 }
-
-a:link {
+#connect a:link {
     color: brown;
 }
-
-a:hover {
+#connect a:hover {
     color: aliceblue;
 }
-
-a:visited {
+#connect a:visited {
+    color: antiquewhite;
+}
+#connect a:visited {
     color: chocolate;
 }
-
 img {
     width: 132px;
     height: 182px;
     border: 3px groove #B22222;
     float: right;
 }
-
 section {
     margin-left: 40px;
     padding-bottom: 10px;
 }
-
 button {
     background-color: lightsteelblue;
     border: none;
@@ -114,12 +138,10 @@ button {
     font-size: 18px;
     transition-duration: 0.4s;
 }
-
 button:hover {
     background-color: brown;
     color: white;
 }
-
 #messages li {
     list-style-type: none;
     padding-left: 20px;
@@ -128,7 +150,6 @@ button:hover {
     background-size: 10px 10px;
     background-repeat: no-repeat;
 }
-
 #messages button {
     background-color: cadetblue;
     border: none;
@@ -140,41 +161,43 @@ button:hover {
     transition-duration: 0.4s;
     margin-left: 5px;
 }
-
 #messages button:hover {
     background-color: brown;
     color: white;
     text-decoration: underline;
 }
-
 #messages a:hover {
     color: blue;
 }
-
-.box-about-me {
+#personal {
+    margin-top: 10rem;
     width: 900px;
     padding-top: 20px;
 }
-
-.connect-box {
-    width: 300px;
-    height: 200px;
+#connect {
+    background-color: blanchedalmond;
+    width: 340px;
+    height: 270px;
     float: right;
     padding: 20px;
-    margin-top: 20px;
-    margin-right: 205px;
+    margin-top: 30px;
+    margin-right: 150px;
     border-style: double;
     border-width: 5px;
 }
-
-.connect-box li:hover {
+#connect li:hover {
     background-color: brown;
+    width: 145px;
 }
-
 .leave-message-box {
     margin-left: 80px;
 }
-
+.flex-message {
+    display: grid;
+    grid-template-columns: 180px 180px;
+    grid-template-rows: 40px;
+    grid-gap: 25px;
+}
 footer {
     text-align: center;
     background-color: DarkSalmon;
@@ -183,63 +206,83 @@ footer {
 
 @media only screen and (max-width: 768px) {
     body {
-      width: 100%;
-      background-color: bisque;
-      font-size: 14px;
-      line-height: 20px;
-      text-align: justify;
+        width: 100%;
+        background-color: azure;
+        font-size: 14px;
+        line-height: 20px;
+        text-align: justify;
     }
-
+    .main-nav {
+        display: grid;
+        grid-template-columns: 140px 140px;
+        grid-template-rows: 8px 8px;
+        grid-row-gap: 25px;
+        grid-column-gap: -35px;
+        width: 380px;
+        height: 50px;
+    }
+    .main-nav li {
+        padding: 1px 1px;
+        font-size: 12px;
+        width: 110px;
+        height: 30px;
+    }
+    .gridItem5 {
+        grid-column-start: 3;
+        grid-column-end: 4;
+    }
+    header {
+        height: 130px;
+        background-color: transparent;
+    }
     h1 {
-       font-size: 30px;
+        font-size: 28px;
     }
-
     h2 {
         font-size: 25px;
     }
-
     label {
         font-size: 16px;
     }
-    
-    input {
-        font-size: 14px;
-        padding: 5px;
-        border: 2px groove #B22222;
-        margin-bottom: 10px;
+    .flex-message {
+        grid-template-columns: 1fr;
+        grid-template-rows: 40px 40px;
+        grid-gap: 25px;
     }
-
     textarea {
-        font-size: 12px;
-        width: 50%;
-        height: 70px;
+        font-size: 14px;
+        width: 250px;
+        height: 100px;
+        padding: 5px 5px;
+        border: 2px groove #B22222;
     }
-
     section {
         margin-left: 5px;
         padding-bottom: 5px;
     }
-
-    .box-about-me {
+    #personal {
         width: 90%;
         padding-top: 20px;
         padding-left: 10px;
     }
-
     .img-background {
         margin-left: 10px;
         width: 95%;
     }
-    
-    .connect-box {
-        width: 200px;
-        height: 200px;
-        padding: 10px;
+    #connect {
+        width: 240px;
+        height: 160px;
         border-style: double;
         border-width: 5px;
-        margin-bottom: 120px;
+        margin-bottom: 25px;
     }
-
+    #connect li {
+        font-size: 14px;
+    }
+    img {
+        width: 70px;
+        height: 90px;
+    }
 }
 
 @media only screen and (min-width: 768px) and (max-width:1024px) {
@@ -249,36 +292,47 @@ footer {
         font-size: 16px;
         line-height: 25px;
         text-align: justify;
-      }
-
-      .img-background {
+    }
+    .main-nav li {
+        padding: 3px 5px;
+        font-size: 14px;
+        margin-top: -20px;
+        width: 100px;
+        display: inline-block;
+        margin: -1.5em 5em;
+    }
+    .img-background {
         margin-left: 20px;
     }
-  
     textarea {
         font-size: 12px;
-        width: 50%;
+        width: 350px;
     }
-
     section {
         margin-left: 10px;
         padding-bottom: 5px;
     }
-
-    .box-about-me {
+    #personal {
         width: 90%;
         padding-top: 20px;
         padding-left: 10px;
     }
-
-    .connect-box {
-        width: 200px;
+    #connect {
+        width: 220px;
         height: 180px;
         float: right;
         padding: 20px;
-        margin-top: 10px;
+        margin-top: 40px;
         margin-right: 20px;
         border-style: double;
         border-width: 5px;
+    }
+    #connect li {
+        font-size: 14px;
+        width: 100px;
+    }
+    img {
+        width: 70px;
+        height: 90px;
     }
 }

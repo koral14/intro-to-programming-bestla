@@ -11,7 +11,7 @@ copyright.innerHTML = `Olga Musteata, ${thisYear}`;
 // Using "DOM Manipulation", append the copyright element to the footer (hint: appendChild method)
 footer.appendChild(copyright);
 // Add Skills Section. List your technical skills by creating an Array of String values and store it in a variable named skills
-const skills = ["blind typing 50WPM", "completed a few projects in Visual Basic and Python", "know how to push/pull a project on GitHub", 
+const skills = ["typing certificate - 50WPM", "completed a few projects in Visual Basic and Python", "know how to push/pull a project on GitHub", 
 "worked with Access, Oracle and Excel", "edited books for a publishing company"];
 // Using "DOM Selection", select the #skills section by id and store it in a variable named skillsSection (hint: querySelector or getElementById method)
 const skillsSection = document.getElementById("skills");
@@ -47,9 +47,10 @@ messageForm[0].addEventListener('submit', (event) => {
     //edit button
     const editButton = document.createElement('button');
     editButton.innerText = 'edit';
-    editButton.type = "button";
+    editButton.type = 'button';
 
     messageList.addEventListener('click', (e) => {
+
         if (e.target.tagName === 'BUTTON') {
             const button = e.target;
             const li = button.parentNode;
@@ -75,7 +76,7 @@ messageForm[0].addEventListener('submit', (event) => {
         }
     }); 
     newMessage.appendChild(editButton);
-    
+    // remove button
     const removeButton = document.createElement('button');
     removeButton.innerText = 'remove';
     removeButton.type = "button";
@@ -85,13 +86,10 @@ messageForm[0].addEventListener('submit', (event) => {
         });
     newMessage.appendChild(removeButton);
     messageList.appendChild(newMessage);
-    // 'Messages' appear only when there is a message (1st variant):
+    // 'Messages' appear only when there is a message:
     const title_messages = document.getElementById('title_h2');
     if (newMessage.innerText.length > 1) {
         title_messages.innerText = 'Messages';
     }
-    // 'Messages' appear only when there is a message (2nd variant):
-    // const titleMessages = messageSection.querySelector('h2');
-    // titleMessages.innerHTML = "Messages";
     messageForm.item(0).reset();
 });
