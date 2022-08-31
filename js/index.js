@@ -83,6 +83,7 @@ messageForm[0].addEventListener('submit', (event) => {
     removeButton.addEventListener('click', () => {
         const entry = removeButton.parentNode;
         entry.remove();
+        // remove 'Messages' title if no messages
         if (messageList.children.length < 1) {
             title_messages.innerText = '';
         }
@@ -97,7 +98,6 @@ messageForm[0].addEventListener('submit', (event) => {
     messageForm.item(0).reset();
 });
 
-var date, gitRipo, despription;
 var githubRequest = new XMLHttpRequest();
 githubRequest.open('GET', 'https://api.github.com/users/koral14/repos');
 githubRequest.send();
@@ -107,12 +107,8 @@ githubRequest.onreadystatechange = function () {
         console.log(repositories);
         var projectSection = document.getElementById('projects');
         var projectList = projectSection.querySelector('ul');
-        var acorn = document.createElement('a');
         for (let i=0; i < repositories.length; i++) {
             var project = document.createElement('li');
-            date = getDate(repositories[i].created_at);
-            gitRipo = repositories[i].html_url;
-            despription = repositories[i].description;
             project.innerHTML = `<a href="${repositories[i].html_url}"><b>${repositories[i].name}</b></a> was created at ${getDate(repositories[i].created_at)}. 
                 <br> <b>Short description: </b>${repositories[i].description}`;
             projectList.appendChild(project);
