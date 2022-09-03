@@ -87,7 +87,7 @@ messageForm[0].addEventListener('submit', (event) => {
         if (messageList.children.length < 1) {
             title_messages.innerText = '';
         }
-        });
+    });
     newMessage.appendChild(removeButton);
     messageList.appendChild(newMessage);
 
