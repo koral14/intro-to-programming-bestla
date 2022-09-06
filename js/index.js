@@ -1,4 +1,3 @@
-
 //  Create a new date object and store it in a variable named today (hint: new Date() constructor)
 var today = new Date();
 // Retrieve the current year from your date object and store it in a variable named thisYear (hint: getFullYear method)
@@ -40,7 +39,10 @@ messageForm[0].addEventListener('submit', (event) => {
     const messageList = messageSection.querySelector('ul');
     const newMessage = document.createElement('li');
 
-    newMessage.innerHTML = `<a href="mailto:${email}">${name}</a> wrote: <span>${message}</span>  `;
+    newMessage.innerHTML = `<a href="mailto:${email}">${name}</a> wrote: 
+        <span style="color:brown;"><b>${message}<b></span><br>`;
+    newMessage.style.backgroundColor = 'beige';
+    newMessage.style.color = 'blue';
 
     //edit button
     const editButton = document.createElement('button');
@@ -67,6 +69,8 @@ messageForm[0].addEventListener('submit', (event) => {
                 const input = newMessage.childNodes[2];
                 const span = document.createElement('span');
                 span.textContent = input.value;
+                span.style.color = 'brown';
+                span.style.fontWeight = 'bold';
                 newMessage.insertBefore(span, input);
                 newMessage.removeChild(input);
                 button.textContent = 'edit';
@@ -75,6 +79,7 @@ messageForm[0].addEventListener('submit', (event) => {
     }); 
     newMessage.appendChild(editButton);
     const title_messages = document.getElementById('title_h2');
+
     // remove button
     const removeButton = document.createElement('button');
     removeButton.innerText = 'remove';
@@ -91,39 +96,44 @@ messageForm[0].addEventListener('submit', (event) => {
     newMessage.appendChild(removeButton);
     messageList.appendChild(newMessage);
 
-    // 'Messages' appear only when there is a message:
+    // 'Messages' title appears only when there is a message:
     if (newMessage.innerText.length > 1) {
-        title_messages.innerText = 'Messages';
+        title_messages.innerText = 'Messages:';
     } 
     messageForm.item(0).reset();
 });
 
-var githubRequest = new XMLHttpRequest();
-githubRequest.open('GET', 'https://api.github.com/users/koral14/repos');
-githubRequest.send();
-githubRequest.onreadystatechange = function () {
-    if (githubRequest.readyState === 4) {
-        var repositories = JSON.parse(githubRequest.responseText);
-        console.log(repositories);
-        var projectSection = document.getElementById('projects');
-        var projectList = projectSection.querySelector('ul');
-        for (let i=0; i < repositories.length; i++) {
-            var project = document.createElement('li');
-            project.innerHTML = `<a href="${repositories[i].html_url}"><b>${repositories[i].name}</b></a> was created at ${getDate(repositories[i].created_at)}. 
-                <br> <b>Short description: </b>${repositories[i].description}`;
-            projectList.appendChild(project);
-        }
-    }
-};
+fetch('https://api.github.com/users/koral14/repos')
+    .then(response => response.json())
+    .then(data => generateRepos(data))
+    .catch(error => console.log('Looks like there was a problem!!!', error))
 
-// Extract date from template: 2022-08-20T02:28:51Z
+function generateRepos(data) {
+    var projectSection = document.getElementById('projects');
+    var projectList = projectSection.querySelector('ul');
+    for (let i=0; i < data.length; i++) {
+        var project = document.createElement('li');
+        project.innerHTML = `
+            <a href="${data[i].html_url}"><b>${data[i].name}</b></a> 
+            was created at ${getDate(data[i].created_at)}. 
+            <br> <b>Short description: </b>${data[i].description}
+        `;
+        project.style.color = 'grey';
+        project.style.width = '555px';
+        project.style.backgroundColor = 'beige';
+        project.style.fontVariant = 'small-caps';
+        projectList.appendChild(project);
+    }
+}
+
+// extracts date from template: 2022-08-20T02:28:51Z
 function getDate(date_and_time) {
     var arrayDateAndTime = date_and_time.split('T');
     var arrayDateSplitted = arrayDateAndTime[0].split('-');
     year = arrayDateSplitted[0];
     month = arrayDateSplitted[1];
     day = arrayDateSplitted[2];
-    var newDate = day + '.' + month + '.' + year;
+    var newDate = day + '/' + month + '/' + year;
     return newDate;
 }
 
