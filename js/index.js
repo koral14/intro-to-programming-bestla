@@ -1,32 +1,27 @@
-//  Create a new date object and store it in a variable named today (hint: new Date() constructor)
+//  Create a new date object
 var today = new Date();
-// Retrieve the current year from your date object and store it in a variable named thisYear (hint: getFullYear method)
 const thisYear = today.getFullYear();
-// Using "DOM Selection", select the <footer> element from the DOM and store it in a variable named footer (hint: querySelector method)
+// select the <footer> element from the DOM and store it in a variable
 const footer = document.querySelector('footer');
-// Create a new paragraph (p) element and store it in a variable named copyright (hint: createElement method)
 const copyright = document.createElement('p');
-// Set the inner HTML of your copyright element to display your name and the current year (hint: use thisYear variable from earlier)
 copyright.innerHTML = `Olga Musteata, ${thisYear}`;
-// Using "DOM Manipulation", append the copyright element to the footer (hint: appendChild method)
+// append the copyright element to the footer
 footer.appendChild(copyright);
-// Add Skills Section. List your technical skills by creating an Array of String values and store it in a variable named skills
+// Add Skills Section
 const skills = ["typing certificate - 50WPM", "completed a few projects in Visual Basic and Python", "know how to push/pull a project on GitHub", 
 "worked with Access, Oracle and Excel", "edited books for a publishing company"];
-// Using "DOM Selection", select the #skills section by id and store it in a variable named skillsSection (hint: querySelector or getElementById method)
+// select the #skills section by id
 const skillsSection = document.getElementById("skills");
-// Using "DOM Selection", query the skillsSection (instead of the entire document) to find the <ul> element and store it in a variable named skillsList
+// query the skillsSection to find the <ul> element
 const skillsList = skillsSection.querySelector('ul');
-// Create a for loop to iterate over your skills Array, starting at index 0
-// Inside the loop, create a new list item (li) element and store it in a variable named skill (hint: createElement method)  
-// On the next line, set the inner text of your skill variable to the value of the current Array element (hint: access the Array element using bracket notation)
-// On the next line, append the skill element to the skillsList element (hint: appendChild method)
+// Create a for loop to iterate over skills array
 for (let i = 0; i < skills.length; i++) {
     let skill = document.createElement('li');
     skill.innerHTML = skills[i];
     skillsList.appendChild(skill);
 }
 
+// target the form and use an event listener to listen for form submit
 const messageForm = document.getElementsByName('leave_message');
 
 messageForm[0].addEventListener('submit', (event) => {
@@ -38,18 +33,16 @@ messageForm[0].addEventListener('submit', (event) => {
     const messageSection = document.getElementById('messages');
     const messageList = messageSection.querySelector('ul');
     const newMessage = document.createElement('li');
-
+    // create the message
     newMessage.innerHTML = `<a href="mailto:${email}">${name}</a> wrote: 
         <span style="color:brown;"><b>${message}<b></span><br>`;
     newMessage.style.backgroundColor = 'beige';
     newMessage.style.color = 'blue';
-
     //edit button
     const editButton = document.createElement('button');
     editButton.innerText = 'edit';
     editButton.type = 'button';
     editButton.id = 'editButton1';
-
     editButton.addEventListener('click', (e) => {
         const button = e.target;
         const li = button.parentNode;
@@ -79,7 +72,6 @@ messageForm[0].addEventListener('submit', (event) => {
     }); 
     newMessage.appendChild(editButton);
     const title_messages = document.getElementById('title_h2');
-
     // remove button
     const removeButton = document.createElement('button');
     removeButton.innerText = 'remove';
@@ -95,7 +87,6 @@ messageForm[0].addEventListener('submit', (event) => {
     });
     newMessage.appendChild(removeButton);
     messageList.appendChild(newMessage);
-
     // 'Messages' title appears only when there is a message:
     if (newMessage.innerText.length > 1) {
         title_messages.innerText = 'Messages:';
@@ -136,5 +127,3 @@ function getDate(date_and_time) {
     var newDate = day + '/' + month + '/' + year;
     return newDate;
 }
-
- 

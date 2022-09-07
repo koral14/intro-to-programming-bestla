@@ -612,23 +612,19 @@ footer {
 
 @media print {
     #connect {
-        width: 220px;
-        height: 160px;
-        margin-bottom: 25px;
-    }
-    #connect li {
-        font-size: 14px;
-    }
-    img {
-        width: 70px;
-        height: 90px;
-    }
-    #connect {
-        margin-top: 250px;
+        display: none;
     }
     textarea {
-        width: 400px;
-        margin-top: 130px;
+        display: none;
+    }
+    .grid-message {
+        display: none;
+    }
+    .leave-message-box h2{
+        display: none;
+    }
+    .leave-message-box button {
+        display: none;
     }
     footer {
         margin-top: 800px;
