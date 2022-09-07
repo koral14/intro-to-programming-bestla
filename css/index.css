@@ -157,6 +157,9 @@ button:hover {
     background-size: 10px 10px;
     background-repeat: no-repeat;
     margin-bottom: 20px;
+    color: brown;
+    font-weight: bold;
+    background-color: beige;
 }
 #messages button {
     background-color: cadetblue;
@@ -173,9 +176,6 @@ button:hover {
     background-color: brown;
     color: white;
     text-decoration: underline;
-}
-#messages a:hover {
-    color: blue;
 }
 #personal {
     margin-top: 10rem;
@@ -222,19 +222,22 @@ button:hover {
     background-color: azure;
 }
 .project_class li {
-    background-color: white;
-    width: 100vw;
-    margin-top: -50px;
+    margin-top: -60px;
     margin-left: -80px;
     padding-left: 35px;
     padding-right: 10px;
     padding-top: 15px;
     list-style-type: none;
-    font-size: 14px;
+    font-size: 16px;
     background-image: url(../images/github.jpg);
     background-position: 0 0;
     background-size: 25px 20px;
     background-repeat: no-repeat;
+    border-style: groove;
+    border: 2px;
+    color: grey;
+    width: 565px;
+    font-variant: small-caps;
 }
 footer {
     text-align: center;
@@ -245,7 +248,7 @@ footer {
 .project_class {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 60px 60px;
+    grid-template-rows: 100px 100px;
     grid-row-gap: 30px;
     grid-column-gap: 100px;
 }

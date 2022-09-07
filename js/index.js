@@ -35,9 +35,7 @@ messageForm[0].addEventListener('submit', (event) => {
     const newMessage = document.createElement('li');
     // create the message
     newMessage.innerHTML = `<a href="mailto:${email}">${name}</a> wrote: 
-        <span style="color:brown;"><b>${message}<b></span><br>`;
-    newMessage.style.backgroundColor = 'beige';
-    newMessage.style.color = 'blue';
+        <span>${message}</span><br>`;
     //edit button
     const editButton = document.createElement('button');
     editButton.innerText = 'edit';
@@ -62,8 +60,6 @@ messageForm[0].addEventListener('submit', (event) => {
                 const input = newMessage.childNodes[2];
                 const span = document.createElement('span');
                 span.textContent = input.value;
-                span.style.color = 'brown';
-                span.style.fontWeight = 'bold';
                 newMessage.insertBefore(span, input);
                 newMessage.removeChild(input);
                 button.textContent = 'edit';
@@ -109,10 +105,6 @@ function generateRepos(data) {
             was created at ${getDate(data[i].created_at)}. 
             <br> <b>Short description: </b>${data[i].description}
         `;
-        project.style.color = 'grey';
-        project.style.width = '555px';
-        project.style.backgroundColor = 'beige';
-        project.style.fontVariant = 'small-caps';
         projectList.appendChild(project);
     }
 }
