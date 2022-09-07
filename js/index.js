@@ -1,33 +1,27 @@
-
-//  Create a new date object and store it in a variable named today (hint: new Date() constructor)
+//  Create a new date object
 var today = new Date();
-// Retrieve the current year from your date object and store it in a variable named thisYear (hint: getFullYear method)
 const thisYear = today.getFullYear();
-// Using "DOM Selection", select the <footer> element from the DOM and store it in a variable named footer (hint: querySelector method)
+// select the <footer> element from the DOM and store it in a variable
 const footer = document.querySelector('footer');
-// Create a new paragraph (p) element and store it in a variable named copyright (hint: createElement method)
 const copyright = document.createElement('p');
-// Set the inner HTML of your copyright element to display your name and the current year (hint: use thisYear variable from earlier)
 copyright.innerHTML = `Olga Musteata, ${thisYear}`;
-// Using "DOM Manipulation", append the copyright element to the footer (hint: appendChild method)
+// append the copyright element to the footer
 footer.appendChild(copyright);
-// Add Skills Section. List your technical skills by creating an Array of String values and store it in a variable named skills
+// Add Skills Section
 const skills = ["typing certificate - 50WPM", "completed a few projects in Visual Basic and Python", "know how to push/pull a project on GitHub", 
 "worked with Access, Oracle and Excel", "edited books for a publishing company"];
-// Using "DOM Selection", select the #skills section by id and store it in a variable named skillsSection (hint: querySelector or getElementById method)
+// select the #skills section by id
 const skillsSection = document.getElementById("skills");
-// Using "DOM Selection", query the skillsSection (instead of the entire document) to find the <ul> element and store it in a variable named skillsList
+// query the skillsSection to find the <ul> element
 const skillsList = skillsSection.querySelector('ul');
-// Create a for loop to iterate over your skills Array, starting at index 0
-// Inside the loop, create a new list item (li) element and store it in a variable named skill (hint: createElement method)  
-// On the next line, set the inner text of your skill variable to the value of the current Array element (hint: access the Array element using bracket notation)
-// On the next line, append the skill element to the skillsList element (hint: appendChild method)
+// Create a for loop to iterate over skills array
 for (let i = 0; i < skills.length; i++) {
     let skill = document.createElement('li');
     skill.innerHTML = skills[i];
     skillsList.appendChild(skill);
 }
 
+// target the form and use an event listener to listen for form submit
 const messageForm = document.getElementsByName('leave_message');
 
 messageForm[0].addEventListener('submit', (event) => {
@@ -39,15 +33,14 @@ messageForm[0].addEventListener('submit', (event) => {
     const messageSection = document.getElementById('messages');
     const messageList = messageSection.querySelector('ul');
     const newMessage = document.createElement('li');
-
-    newMessage.innerHTML = `<a href="mailto:${email}">${name}</a> wrote: <span>${message}</span>  `;
-
+    // create the message
+    newMessage.innerHTML = `<a href="mailto:${email}">${name}</a> wrote: 
+        <span>${message}</span><br>`;
     //edit button
     const editButton = document.createElement('button');
     editButton.innerText = 'edit';
     editButton.type = 'button';
     editButton.id = 'editButton1';
-
     editButton.addEventListener('click', (e) => {
         const button = e.target;
         const li = button.parentNode;
@@ -90,41 +83,39 @@ messageForm[0].addEventListener('submit', (event) => {
     });
     newMessage.appendChild(removeButton);
     messageList.appendChild(newMessage);
-
-    // 'Messages' appear only when there is a message:
+    // 'Messages' title appears only when there is a message:
     if (newMessage.innerText.length > 1) {
-        title_messages.innerText = 'Messages';
+        title_messages.innerText = 'Messages:';
     } 
     messageForm.item(0).reset();
 });
 
-var githubRequest = new XMLHttpRequest();
-githubRequest.open('GET', 'https://api.github.com/users/koral14/repos');
-githubRequest.send();
-githubRequest.onreadystatechange = function () {
-    if (githubRequest.readyState === 4) {
-        var repositories = JSON.parse(githubRequest.responseText);
-        console.log(repositories);
-        var projectSection = document.getElementById('projects');
-        var projectList = projectSection.querySelector('ul');
-        for (let i=0; i < repositories.length; i++) {
-            var project = document.createElement('li');
-            project.innerHTML = `<a href="${repositories[i].html_url}"><b>${repositories[i].name}</b></a> was created at ${getDate(repositories[i].created_at)}. 
-                <br> <b>Short description: </b>${repositories[i].description}`;
-            projectList.appendChild(project);
-        }
-    }
-};
+fetch('https://api.github.com/users/koral14/repos')
+    .then(response => response.json())
+    .then(data => generateRepos(data))
+    .catch(error => console.log('Looks like there was a problem!!!', error))
 
-// Extract date from template: 2022-08-20T02:28:51Z
+function generateRepos(data) {
+    var projectSection = document.getElementById('projects');
+    var projectList = projectSection.querySelector('ul');
+    for (let i=0; i < data.length; i++) {
+        var project = document.createElement('li');
+        project.innerHTML = `
+            <a href="${data[i].html_url}"><b>${data[i].name}</b></a> 
+            was created at ${getDate(data[i].created_at)}. 
+            <br> <b>Short description: </b>${data[i].description}
+        `;
+        projectList.appendChild(project);
+    }
+}
+
+// extracts date from template: 2022-08-20T02:28:51Z
 function getDate(date_and_time) {
     var arrayDateAndTime = date_and_time.split('T');
     var arrayDateSplitted = arrayDateAndTime[0].split('-');
     year = arrayDateSplitted[0];
     month = arrayDateSplitted[1];
     day = arrayDateSplitted[2];
-    var newDate = day + '.' + month + '.' + year;
+    var newDate = day + '/' + month + '/' + year;
     return newDate;
 }
-
- 

@@ -5,10 +5,11 @@ body {
     line-height: 30px;
     position: relative;
     margin-top: -20px;
+    background-color: azure;
 }
 header {
     background-color:blanchedalmond;
-    opacity: 0.90;
+    background-image: url(../images/symbols.jpg);
     padding: 10px 15px;
     height: 110px;
     position: fixed;
@@ -19,7 +20,7 @@ header {
 h1 {
     text-align: center; 
     padding: 20px; 
-    background-color: DarkSalmon;
+    background-color: blanchedalmond;
     font-style: italic;
     font-size: 50px;
     font-weight: 600;
@@ -28,6 +29,9 @@ h1 {
     margin-top: auto;
     background-image: url(../images/moldova-flag.jpg);
     background-repeat: no-repeat;
+    border-style: solid;
+    border-color: azure;
+    border-width: 2px;
 }
 h2 {
     font-size: 35px;
@@ -147,30 +151,31 @@ button:hover {
 }
 #messages li {
     list-style-type: none;
-    padding-left: 20px;
+    padding: 10px;
     background-image: url(../images/tick.jpg);
     background-position: 0 0;
     background-size: 10px 10px;
     background-repeat: no-repeat;
+    margin-bottom: 20px;
+    color: brown;
+    font-weight: bold;
+    background-color: beige;
 }
 #messages button {
     background-color: cadetblue;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     color: black;
-    padding: 5px 15px;
+    padding: 5px 8px;
     display: inline-block;
     font-size: 14px;
     transition-duration: 0.4s;
-    margin-left: 5px;
+    margin: 5px;
 }
 #messages button:hover {
     background-color: brown;
     color: white;
     text-decoration: underline;
-}
-#messages a:hover {
-    color: blue;
 }
 #personal {
     margin-top: 10rem;
@@ -179,14 +184,15 @@ button:hover {
 }
 #connect {
     background-color: blanchedalmond;
+    background-image: url(../images/programming_img2.jpg);
     width: 340px;
     height: 270px;
     float: right;
     padding: 20px;
     margin-top: 30px;
     margin-right: 150px;
-    border-style: double;
-    border-width: 5px;
+    border-style: groove;
+    border-width: 8px;
 }
 #connect li:hover {
     background-color: brown;
@@ -213,26 +219,41 @@ button:hover {
     padding-left: 40px;
     padding-top: 20px;
     width: 100vw;
-    background-color: white;
+    background-color: azure;
 }
 .project_class li {
-    background-color: white;
-    width: 100vw;
-    height: 80px;
-    margin-top: -80px;
+    margin-top: -60px;
     margin-left: -80px;
     padding-left: 35px;
+    padding-right: 10px;
+    padding-top: 15px;
     list-style-type: none;
-    font-size: 14px;
+    font-size: 16px;
     background-image: url(../images/github.jpg);
     background-position: 0 0;
     background-size: 25px 20px;
     background-repeat: no-repeat;
+    border-style: groove;
+    border: 2px;
+    color: grey;
+    width: 565px;
+    font-variant: small-caps;
 }
 footer {
     text-align: center;
-    background-color: DarkSalmon;
+    background-color: bisque;
     height: 25px;
+    color: brown;
+}
+.project_class {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 100px;
+    grid-row-gap: 30px;
+    grid-column-gap: 100px;
+}
+.project_class li {
+    height: 55px;
 }
 
 /* --------------------------MEDIA QUERIES------------------------------------------- */
@@ -240,17 +261,24 @@ footer {
     body {
         width: 100%;
         background-color: azure;
-        font-size: 10px;
+        font-size: 12px;
         line-height: 12px;
         text-align: justify;
         margin-top: -140px;
         margin-left: 0px;
     }
+    header{
+        background-image: none;
+        background-color: inherit;
+        opacity: 0.85;
+    }
     header h1 {
         font-size: 18px;
         text-align: center;
+        color: antiquewhite;
         margin-right: 5px;
         height: 2px;
+        background-color:#B22222;
         background-image: none;
     }
     section h2 {
@@ -261,7 +289,7 @@ footer {
     }
     .main-nav {
         display: grid;
-        grid-template-columns: 70px 70px;
+        grid-template-columns: 70px 70px 70px;
         grid-template-rows: 8px 8px;
         grid-row-gap: 10px;
         grid-column-gap: 20px;
@@ -274,7 +302,7 @@ footer {
         width: 80px;
         height: 12px;
         margin-top: 5px;
-        margin-left: -140px;
+        margin-left: -90px;
     }
     header {
         height: 70px;
@@ -324,7 +352,7 @@ footer {
         height: 118px;
         float: left;
         margin-bottom: 25px;
-        margin-left: 10px;
+        margin-left: 25px;
         padding-top: 3px;
     }
     #connect li {
@@ -354,22 +382,28 @@ footer {
         height: 30px;
         color: #B22222;
     }
-    #message li {
+    #messages li {
         text-align: left;
     }
     #projects h2 {
         background-color: inherit;
     }
+    .project_class {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
     .project_class li {
         margin-left: -20px;
-        background-color: inherit;
+        margin-bottom: 45px;
+        font-size: 12px;
     }
 }
 
 @media only screen and (min-width: 468px) and (max-width:768px) {
     body {
         width: 100%;
-        background-color:white;
+        background-color: azure;
         font-size: 14px;
         line-height: 20px;
         text-align: justify;
@@ -379,7 +413,7 @@ footer {
     header h1 {
         background-image: url(../images/moldova-flag.jpg);
         background-repeat: no-repeat;
-        height: 10px;
+        height: 15px;
         font-size: 35px;
         text-align: right;
     }
@@ -401,7 +435,7 @@ footer {
         margin-left: -50px;
     }
     header {
-        height: 100px;
+        height: 113px;
     }
     #message h2 {
         text-align: left;
@@ -459,7 +493,6 @@ footer {
         padding: 5px;
     }
     #messages li {
-        margin-bottom: 20px;
         margin-left: -55px;
     }
     #editButton1 {
@@ -469,7 +502,16 @@ footer {
     #removeButton2 {
         display: block;
     }
+    .project_class {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
     .project_class li {
+        margin-left: -20px;
+        background-color: inherit;
+        margin-bottom: 50px;
+        line-height: 16px;
         margin-left: 0px;
     }
 }  
@@ -520,8 +562,6 @@ footer {
         padding: 20px;
         margin-top: 40px;
         margin-right: 20px;
-        border-style: double;
-        border-width: 5px;
     }
     #connect li {
         font-size: 14px;
@@ -535,14 +575,20 @@ footer {
         font-size: 28px;
         text-align: center;
     }
-    #messages li {
-        margin-bottom: 20px;
-    }
     #projects h2 {
         height: 205px;
         margin-bottom: -90px;
     }
+    .project_class {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
     .project_class li {
+        margin-left: -20px;
+        background-color: inherit;
+        margin-bottom: 50px;
+        line-height: 16px;
         margin-left: 10px;
     }
 }
@@ -554,27 +600,34 @@ footer {
     #connect {
         margin-right: 20px;
     }
+    .project_class {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .project_class li {
+        margin-left: -20px;
+        background-color: inherit;
+        margin-bottom: 50px;
+        line-height: 16px;
+    }
 }
 
 @media print {
     #connect {
-        width: 220px;
-        height: 160px;
-        margin-bottom: 25px;
-    }
-    #connect li {
-        font-size: 14px;
-    }
-    img {
-        width: 70px;
-        height: 90px;
-    }
-    #connect {
-        margin-top: 250px;
+        display: none;
     }
     textarea {
-        width: 400px;
-        margin-top: 130px;
+        display: none;
+    }
+    .grid-message {
+        display: none;
+    }
+    .leave-message-box h2{
+        display: none;
+    }
+    .leave-message-box button {
+        display: none;
     }
     footer {
         margin-top: 800px;
