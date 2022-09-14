@@ -311,6 +311,7 @@ footer a img {
         grid-column-gap: 10px;
         margin-right: -70px;
         margin-top: -10px;
+<<<<<<< HEAD
     }
     .gridItem3 {
         grid-row-start: 2;
@@ -319,6 +320,8 @@ footer a img {
     .gridItem4 {
         grid-column-start: 1;
         grid-column-end: 3;
+=======
+>>>>>>> 34fa4c56a653c581703fe42a637b9f0c7c6da6a3
     }
     .main-nav li {
         padding: 1px 1px;
@@ -435,6 +438,7 @@ footer a img {
     .main-nav {
         display: grid;
         grid-template-columns: 70px 70px 70px;
+<<<<<<< HEAD
         grid-template-rows: 20px 20px;
         grid-gap: 10px;
         width: 50%;
@@ -446,6 +450,12 @@ footer a img {
     .gridItem4 {
         grid-column-start: 1;
         grid-column-end: 3;
+=======
+        grid-template-rows: 20px 5px;
+        grid-row-gap: 10px;
+        grid-column-gap: 20px;
+        width: 50%;
+>>>>>>> 34fa4c56a653c581703fe42a637b9f0c7c6da6a3
     }
     .main-nav li {
         padding: 1px 1px;
@@ -530,8 +540,13 @@ footer a img {
     }
     .main-nav {
         display: grid;
+<<<<<<< HEAD
         grid-template-columns: 90px 90px 90px 90px 90px;
         grid-template-rows: 30px;
+=======
+        grid-template-columns: 90px 90px 90px;
+        grid-template-rows: 30px 20px;
+>>>>>>> 34fa4c56a653c581703fe42a637b9f0c7c6da6a3
         grid-row-gap: 5px;
         grid-column-gap: 20px;
         margin-top: -55px;
