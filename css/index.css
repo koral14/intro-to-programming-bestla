@@ -279,7 +279,7 @@ footer a img {
 }
 
 /* --------------------------MEDIA QUERIES------------------------------------------- */
-@media only screen and (min-width: 120px) and (max-width: 468px) {
+@media only screen and (min-width: 120px) and (max-width: 469px) {
     body {
         width: 100%;
         background-color: white;
@@ -409,7 +409,7 @@ footer a img {
     }
 }
 
-@media only screen and (min-width: 468px) and (max-width:768px) {
+@media only screen and (min-width: 469px) and (max-width:769px) {
     body {
         width: 100%;
         background-color: ivory;
@@ -517,7 +517,7 @@ footer a img {
     }
 }  
 
-@media only screen and (min-width: 768px) and (max-width:1024px) {
+@media only screen and (min-width: 769px) and (max-width:1024px) {
     body {
         width: 100%;
         font-size: 16px;
