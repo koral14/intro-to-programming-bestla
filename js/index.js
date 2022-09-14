@@ -1,15 +1,16 @@
 //  Create a new date object
 var today = new Date();
+var dateAndTime = today.getMonth() + "/" + today.getDate() + "/" + today.getFullYear() + ", " + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds ();
 const thisYear = today.getFullYear();
+const thisHour = today.getHours();
 // select the <footer> element from the DOM and store it in a variable
 const footer = document.querySelector('footer');
 const copyright = document.createElement('p');
-copyright.innerHTML = `Olga Musteata, ${thisYear}`;
+copyright.innerHTML = `&copy; Olga Musteata ${thisYear}`;
 // append the copyright element to the footer
 footer.appendChild(copyright);
 // Add Skills Section
-const skills = ["typing certificate - 50WPM", "completed a few projects in Visual Basic and Python", "know how to push/pull a project on GitHub", 
-"worked with Access, Oracle and Excel", "edited books for a publishing company"];
+const skills = ["JavaScript", "CSS", "PHP", "Visual Basic", "Python", "Access", "SQL", "50WPM"];
 // select the #skills section by id
 const skillsSection = document.getElementById("skills");
 // query the skillsSection to find the <ul> element
@@ -34,8 +35,9 @@ messageForm[0].addEventListener('submit', (event) => {
     const messageList = messageSection.querySelector('ul');
     const newMessage = document.createElement('li');
     // create the message
-    newMessage.innerHTML = `<a href="mailto:${email}">${name}</a> wrote: 
-        <span>${message}</span><br>`;
+    newMessage.innerHTML = `<span>${message}</span><br>
+        ${dateAndTime} from <a href="mailto:${email}">${name}</a><br>`;
+
     //edit button
     const editButton = document.createElement('button');
     editButton.innerText = 'edit';
@@ -49,7 +51,7 @@ messageForm[0].addEventListener('submit', (event) => {
             if (button.textContent === 'remove') {
                 ul.removeChild(newMessage);
             } else if (button.textContent === 'edit') {
-                const span = newMessage.childNodes[2];
+                const span = newMessage.childNodes[0];
                 const input = document.createElement('input');
                 input.type = 'text';
                 input.value = span.innerText;
@@ -57,7 +59,7 @@ messageForm[0].addEventListener('submit', (event) => {
                 newMessage.removeChild(span);
                 button.textContent = 'save';
             } else if (button.textContent === 'save') {
-                const input = newMessage.childNodes[2];
+                const input = newMessage.childNodes[0];
                 const span = document.createElement('span');
                 span.textContent = input.value;
                 newMessage.insertBefore(span, input);
@@ -102,7 +104,7 @@ function generateRepos(data) {
         var project = document.createElement('li');
         project.innerHTML = `
             <a href="${data[i].html_url}"><b>${data[i].name}</b></a> 
-            was created at ${getDate(data[i].created_at)}. 
+            was created at ${getDate1(data[i].created_at)}. 
             <br> <b>Short description: </b>${data[i].description}
         `;
         projectList.appendChild(project);
@@ -110,7 +112,7 @@ function generateRepos(data) {
 }
 
 // extracts date from template: 2022-08-20T02:28:51Z
-function getDate(date_and_time) {
+function getDate1(date_and_time) {
     var arrayDateAndTime = date_and_time.split('T');
     var arrayDateSplitted = arrayDateAndTime[0].split('-');
     year = arrayDateSplitted[0];

@@ -3,42 +3,43 @@
     <head>
         <title>My index page</title>
         <meta charset="UTF-8">
-        <meta name="description" content="Personal information">
-        <meta name="keywords" content="Musteata, Experience">
+        <meta name="description" content="Resume">
+        <meta name="keywords" content="Musteata, Experience, Portofolio, Resume">
         <meta name="author" content="Olga Musteata">
         <link rel="stylesheet" href="css/index.css">
     </head>
     <body>
         <header>
+            <img src="images/profile.png" alt="My profile picture">
             <h1>Olga Musteata</h1>
             <ul class="main-nav">
                 <li class="gridItem1"><a href="#personal">ABOUT</a></li>
                 <li class="gridItem2"><a href="#experience">EXPERIENCE</a></li>
                 <li class="gridItem3"><a href="#skills">SKILLS</a></li>
                 <li class="gridItem4"><a href="#projects">PROJECTS</a></li>
-                <li class="gridItem5"><a href="#connect">CONNECT</a></li>
-                <li class="gridItem6"><a href="#message">MESSAGE ME</a></li>
+                <li class="gridItem5"><a href="#message">CONTACT</a></li>
             </ul>
         </header>
         <div class="img-background">
             <section id="personal">
-                <h2>Something about me...</h2>
-                <p> &nbsp; &nbsp; I am a Moldovan who moved to the US with my family four years ago after winning the Green Card lottery. <br>
-                    &nbsp; &nbsp; Because I was raised in a post-Soviet country, I speak both Romanian and Russian fluently. I also speak English with ease and have good understanding of Spanish, Italian, and Portuguese. During my time in high school and college, I also learned German and French, but I never had the chance to put those skills to use. <br>
-                    &nbsp; &nbsp; I hold a computer science bachelor's degree from my native country as well as a database management certificate from California. The only thing I don't have yet is experience in programming. <br>
-                    &nbsp; &nbsp; In terms of my personal life, I am a happy wife and a mother of two children.</p>
+                <h2>About me</h2>
+                <p> I have been an American resident since 2018. I moved from Moldova to California, hoping to fulfill the American dream. 
+                    Besides English, I speak both Romanian and Russian fluently, as I came from a post-Soviet country.<br> 
+                    I hold a foreign computer science bachelor's degree as well as a local database management certificate and an A+ certificate.<br>
+                    In terms of my personal life, I am a happy wife and a mother of two children. Regarding my professional life, I keep moving towards my goal of becoming a professional web designer.<br>
+                </p>
             </section>
             <section id="experience">
                 <h2>Experience</h2>
                 <ul class="container-experience">
-                    <li>Morebooks - as part of the Print Management Team</li>
-                    <li>Omniscriptum - as an Acquisition Editor</li>
-                    <li>Dreamcraft LTD - website administrator</li>
+                    <li>Morebooks - part of the Print Management Team</li>
+                    <li>Omniscriptum - Acquisition Editor</li>
+                    <li>Dreamcraft LTD - Website Administrator</li>
                 </ul>
             </section>
             <section id="skills">
                 <h2>Skills</h2>
-                <ul></ul>
+                <ul class="skill_grid"></ul>
             </section>
             <section id="projects">
                 <h2>Projects</h2>
@@ -46,15 +47,6 @@
                 </ul>
             </section>
         </div>
-        <section id="connect">
-            <h2>Connect</h2>
-            <ol>
-                <img src="images/profile.jpg" alt="My profile picture">
-                <li><a href="mailto:musteataolga8@gmail.com">Email</a></li>
-                <li><a href="https://github.com/koral14/intro-to-programming-bestla?organization=koral14&organization=koral14">GitHub account</a></li>
-                <li><a href="https://linkedin.com/in/olga-musteata-293b10214">LinkedIn profile</a></li>
-            </ol>
-        </section>
         <div class="leave-message-box">
             <section id="message">
                 <h2>Leave a Message</h2>
@@ -73,7 +65,7 @@
                             <textarea id="message" name="message" required="true"></textarea><br>
                         </div>
                     </div>
-                    <button type="submit">Submit</button>
+                    <button type="submit" class="b1">SUBMIT</button>
                 </form>
             </section>
             <section id="messages">
@@ -81,7 +73,13 @@
                 <ul></ul>
             </section>
         </div>
-        <footer></footer>
+        <footer>
+            <div class="icons">
+                <a href="https://linkedin.com/in/olga-musteata-293b10214"><img alt="linkedIN logo" src="images/linkedIN.png" class="icon1"></a>
+                <a href="https://github.com/koral14/intro-to-programming-bestla?organization=koral14&organization=koral14"><img alt="GitHub logo" src="images/github.png" class="icon2"></a>
+                <a href="mailto:musteataolga8@gmail.com"><img alt="email logo" src="images/email.png" class="icon3"></a>
+            </div>
+        </footer>
         <script src="js/index.js"></script>
     </body>
 </html>
